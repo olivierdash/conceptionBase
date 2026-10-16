@@ -1,10 +1,10 @@
+--Piege: Je choisis le NUMERIC (entier) pour le prix car il n'y a pas de centimes
+
 CREATE TABLE Plats(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nom VARCHAR(100) NOT NULL UNIQUE,
     prix NUMERIC CHECK (prix > 0)
 );
-
---Piege: Je choisis le NUMERIC (entier) pour le prix car il n'y a pas de centimes
 
 INSERT INTO Plats (nom, prix) VALUES('Romazava', 7000);
 INSERT INTO Plats (nom, prix) VALUES('Ravitoto sy henakisoa', 8000);
