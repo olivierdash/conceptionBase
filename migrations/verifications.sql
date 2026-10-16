@@ -15,3 +15,9 @@ SELECT cmd.nom, SUM(p.prix * cmdt.quantite) AS montant
 FROM Commande AS cmd JOIN CommandeDetail AS cmdt
 ON cmd.id = cmdt.idCommande JOIN Plats AS p
 ON cmdt.idPlat = p.id GROUP BY cmd.nom;
+
+-- Etape4
+
+SELECT cmd.nom, COALESCE(c.nom, 'client de passage') AS nomClient FROM commande as cmd JOIN CommandeDetail AS cmdt
+ON cmd.id = cmdt.idCommande JOIN Client AS c ON c.id = cmd.idClient
+GROUP BY cmd.nom;
